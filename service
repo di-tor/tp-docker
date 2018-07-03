@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+# ./service.sh [up|down] --no-demon
+
+# ->
+
+# .service.sh [up|down|deploy] [--no-demon] [--prod]
+
+# docker-compose up --build
+
+while [ -n "$1" ]
+do
+case "$1" in
+    start) echo "docker up" ;;
+    stop) echo "docker down" ;;
+esac
+shift
+done
